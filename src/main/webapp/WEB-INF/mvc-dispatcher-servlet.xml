@@ -11,8 +11,8 @@
 
 	<context:component-scan base-package="com.nisum.banana.web.api" />
 	
-	<mvc:resources mapping="/scripts/**" location="/scripts/"  
-	cache-period="31556926"/>
+	<mvc:resources mapping="/scripts/**" location="/scripts/"  cache-period="31556926"/>
+	<mvc:resources mapping="/imgs/**" location="/imgs/" />   
 
 	<mvc:annotation-driven />
 
