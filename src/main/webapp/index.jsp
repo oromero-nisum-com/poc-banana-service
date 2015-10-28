@@ -12,7 +12,24 @@ $(document).ready(function() {
 	}else{
 		document.cookie="username=Osman R";
 	}
+    $("#maoButton").click(function() {
+        $.ajax({
+            url: 'http://localhost:8080/poc-banana-service/productService/product/1',
+            dataType: 'json',
+            success: function(data) {
+            	$("#mao_price").text(data.sellingPrice);         	
+              //  $("#results").append('all good');
+                //alert(JSON.stringify(data));	
+            },
+             error: function() {
+                $("#results").append("error");
+                alert('error');
+            }
+        });
+    });
+	
 });
+
 
 </script>
 </head>
@@ -55,7 +72,7 @@ $(document).ready(function() {
 				<b>Lucky you !</b><br/>
 				<b>Make an Offer</b> is now enabled for you for this particular item<br/>
 				<div id="item_description_mao_price" style="font-size:24px;font-weight:bold;color:gray;">Current price: $<span id="mao_price">49.90</span></div>				
-				<input type="text" style="font-size:24px;font-weight:bold;color:red;"/> <button style="background:red; color:yellow;font-size:24px;font-weight:bold;"> Make and Offer !</button>
+				<input type="text" style="font-size:24px;font-weight:bold;color:red;"/> <button id="maoButton" style="background:red; color:yellow;font-size:24px;font-weight:bold;"> Make and Offer !</button>
 			</div>
 		</div>
 	</div>
