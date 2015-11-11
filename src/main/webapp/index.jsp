@@ -14,7 +14,7 @@ $(document).ready(function() {
 	}
     $("#maoButton").click(function() {
         $.ajax({
-            url: 'http://localhost:8080/poc-banana-service/productService/product/1',
+            url: 'http://192.168.7.36:8080/poc-banana-service/productService/product/1',
             dataType: 'json',
             success: function(data) {
             	$("#mao_price").text(data.sellingPrice);         	
